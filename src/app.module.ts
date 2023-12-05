@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { MoviesModule } from './movies/movies.module';
 
 @Module({
   imports: [
@@ -9,6 +10,7 @@ import { AppService } from './app.service';
       envFilePath: '.env',
       isGlobal: true,
     }),
+    MoviesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
